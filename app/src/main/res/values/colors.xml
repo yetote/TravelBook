@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#23238e</color>
+    <color name="red">#ff0000</color>
+    <color name="yellow">#d9d919</color>
+    <color name="orange">#ff7f00</color>
+    <color name="green">#00ff7f</color>
+    <color name="black">#000000</color>
+    <color name="black_50">#50000000</color>
+    <color name="grey">#3095a8a8</color>
+    <color name="grey_30">#30e1f0f0</color>
+    <color name="tianyi_50">#5066ccff</color>
+    <color name="tianyi_30">#3066ccff</color>
+    <color name="shibanlan">#345288</color>
+    <color name="lamu_pink">#30ffcbc7</color>
+    <color name="leimu_blue">#30b1d0fc</color>
+    <color name="blue_2">#335888</color>
+
+</resources>

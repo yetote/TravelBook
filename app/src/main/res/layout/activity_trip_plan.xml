@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_trip_plan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.tf.travelbook.TripPlan">
+
+    <ImageView
+        android:id="@+id/trip_plan_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/timg"
+        android:scaleType="fitXY" />
+
+    <com.volokh.danylo.utils.DebugRecyclerView
+        android:id="@+id/trip_plan_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.volokh.danylo.utils.DebugRecyclerView>
+</RelativeLayout>

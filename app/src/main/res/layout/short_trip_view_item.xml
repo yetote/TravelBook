@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/short_trip_view_item_insert"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/jiahao" />
+
+    <TextView
+        android:id="@+id/short_trip_view_item_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_toStartOf="@+id/short_trip_view_item_insert"
+        android:gravity="center_vertical|left"
+        android:text="1"
+        android:textSize="20sp" />
+</RelativeLayout>

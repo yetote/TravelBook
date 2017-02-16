@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TravelBook</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="map">地图</string>
+    <string name="near">附近</string>
+    <string name="mainactivity_recycleview_item_title">掠夺者</string>
+    <string name="mainactivity_recycleview_item_content">这是掠夺者</string>
+    <string name="title_activity_baidu_demo">BaiduDemo</string>
+    <string name="price">¥100</string>
+    <string name="trip">行程</string>
+    <string name="mine">我的</string>
+    <string name="short_trip">短途行程</string>
+    <string name="long_trip">长途旅行</string>
+</resources>

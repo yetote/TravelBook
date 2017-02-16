@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/searchresult_recycleview_item_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/app_icon"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_toEndOf="@+id/searchresult_recycleview_item_img"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/searchresult_recycleview_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center" />
+
+        <RatingBar
+            android:id="@+id/searchresult_recycleview_item_evaluate"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:isIndicator="true"
+            android:numStars="5" />
+
+        <TextView
+            android:id="@+id/searchresult_recycleview_item_adress"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center" />
+
+        <TextView
+            android:id="@+id/searchresult_recycleview_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="right|center"
+            android:text="@string/price"
+            android:textColor="@color/orange"
+            android:textSize="25sp" />
+    </LinearLayout>
+</RelativeLayout>
