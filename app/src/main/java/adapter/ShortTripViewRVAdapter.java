@@ -1,3 +1,24 @@
+//
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                           O\  =  /O
+//                        ____/`---'\____
+//                      .'  \\|     |//  `.
+//                     /  \\|||  :  |||//  \
+//                    /  _||||| -:- |||||-  \
+//                    |   | \\\  -  /// |   |
+//                    | \_|  ''\---/''  |   |
+//                    \  .-\__  `-`  ___/-. /
+//                  ___`. .'  /--.--\  `. . __
+//               ."" '<  `.___\_<|>_/___.'  >'"".
+//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//              \  \ `-.   \_ __\ /__ _/   .-` /  /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//                      佛祖保佑       永无BUG
 package adapter;
 
 import android.content.Context;
@@ -8,17 +29,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.tf.travelbook.MainActivity;
-import com.example.tf.travelbook.NearView;
 import com.example.tf.travelbook.R;
-import com.example.tf.travelbook.ShortTrip;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import model.MainActivityRVModel;
 
 /**
  * Created by TF on 2017/2/12.
@@ -65,7 +80,7 @@ public class ShortTripViewRVAdapter extends RecyclerView.Adapter {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            btn = (Button) itemView.findViewById(R.id.short_trip_view_item_insert);
+            //btn = (Button) itemView.findViewById(R.id.short_trip_view_item_insert);
             tv = (TextView) itemView.findViewById(R.id.short_trip_view_item_tv);
 
         }
@@ -92,20 +107,6 @@ public class ShortTripViewRVAdapter extends RecyclerView.Adapter {
         final MyViewHolder vh = (MyViewHolder) holder;
         vh.getTv().setText(list.get(position));
         Log.e("TAG", list.get(position));
-
-        final ShortTrip st = new ShortTrip();
-
-        vh.getBtn().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, vh.getTv().getText(), Toast.LENGTH_SHORT).show();
-                list_p.add(vh.getTv().getText().toString());
-                //st.plan(vh.getTv().getText().toString());
-                // Log.e("adapter", list_p.size()+"");
-                st.plan_list(list_p);
-
-            }
-        });
     }
 
     @Override

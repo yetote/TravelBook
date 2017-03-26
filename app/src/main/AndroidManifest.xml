@@ -35,7 +35,17 @@
         <activity android:name=".LongTrip" />
         <activity android:name=".ShortTrip" />
         <activity android:name=".NearView" />
-        <activity android:name=".TripPlan"></activity>
+        <activity android:name=".TripPlan" />
+        <activity android:name=".LongTripView" />
+        <activity android:name=".ShortTripView" />
+        <activity
+            android:name=".Plan"
+            android:theme="@style/PlanActionBar" />
+        <activity android:name=".ViewInformation" />
+        <activity android:name=".BasicNeed" />
+        <activity
+            android:name=".CheckPlan"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

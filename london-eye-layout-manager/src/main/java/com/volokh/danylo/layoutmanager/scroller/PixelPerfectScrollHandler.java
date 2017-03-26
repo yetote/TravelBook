@@ -93,7 +93,6 @@ public class PixelPerfectScrollHandler extends ScrollHandler {
 
         view.offsetTopAndBottom(dY);
         view.offsetLeftAndRight(dX);
-
         previousViewData.updateData(view, newCenterPoint);
     }
 }

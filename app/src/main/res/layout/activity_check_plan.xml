@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_check_plan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.example.tf.travelbook.CheckPlan">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/checkplan_next_btn">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/checkplan_toolsbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/checkplan_tripplan_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:text="TextView"
+                app:layout_constraintLeft_toLeftOf="@+id/checkplan_toolsbar"
+                app:layout_constraintRight_toRightOf="@+id/checkplan_toolsbar"
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_toolsbar" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/checkplan_tripplan_rv"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="@+id/checkplan_tripplan_tv"
+                app:layout_constraintRight_toRightOf="@+id/checkplan_tripplan_tv"
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_tripplan_tv"></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/checkplan_planin_tv"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:text="TextView"
+                app:layout_constraintLeft_toLeftOf="@+id/checkplan_tripplan_rv"
+                app:layout_constraintRight_toRightOf="@+id/checkplan_tripplan_rv"
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_tripplan_rv" />
+
+            <RelativeLayout
+                android:id="@+id/checkplan_plandate_rl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="@+id/checkplan_planin_tv"
+                app:layout_constraintRight_toRightOf="@+id/checkplan_planin_tv"
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_planin_tv">
+
+                <ImageView
+                    android:id="@+id/checkplan_plandate_iv"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/app_icon" />
+
+                <TextView
+                    android:id="@+id/checkplan_plandate_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/checkplan_plandate_iv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="-至-" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/checkplan_planpeople_rl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="@+id/checkplan_planin_tv"
+                app:layout_constraintRight_toRightOf="@+id/checkplan_planin_tv"
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_plandate_rl">
+
+                <ImageView
+                    android:id="@+id/checkplan_planpeople_iv"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/app_icon" />
+
+                <TextView
+                    android:id="@+id/checkplan_planpeople_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/checkplan_planpeople_iv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="-至-" />
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/checkplan_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:text="@string/next" />
+</RelativeLayout>

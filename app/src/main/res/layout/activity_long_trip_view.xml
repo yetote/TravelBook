@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_long_trip_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.tf.travelbook.LongTripView">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/long_trip_view_province"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/long_trip_view_city"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/long_trip_view_province">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

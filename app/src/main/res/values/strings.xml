@@ -12,4 +12,16 @@
     <string name="mine">我的</string>
     <string name="short_trip">短途行程</string>
     <string name="long_trip">长途旅行</string>
+    <string name="choose">请选择</string>
+    <string name="start">出发城市</string>
+    <string name="finish">结束城市</string>
+    <string name="sure">确定</string>
+    <string name="view">景点</string>
+    <string name="insert">添加</string>
+    <string name="next">下一步</string>
+    <string name="trip_time">游玩天数</string>
+    <string name="start_date">出发日期</string>
+    <string name="finish_date">返回日期</string>
+    <string name="people_num">成人人数</string>
+    <string name="child_num">儿童人数</string>
 </resources>

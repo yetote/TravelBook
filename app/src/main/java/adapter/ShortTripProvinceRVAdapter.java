@@ -1,3 +1,24 @@
+//
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                           O\  =  /O
+//                        ____/`---'\____
+//                      .'  \\|     |//  `.
+//                     /  \\|||  :  |||//  \
+//                    /  _||||| -:- |||||-  \
+//                    |   | \\\  -  /// |   |
+//                    | \_|  ''\---/''  |   |
+//                    \  .-\__  `-`  ___/-. /
+//                  ___`. .'  /--.--\  `. . __
+//               ."" '<  `.___\_<|>_/___.'  >'"".
+//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//              \  \ `-.   \_ __\ /__ _/   .-` /  /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//                      佛祖保佑       永无BUG
 package adapter;
 
 import android.content.Context;
@@ -18,6 +39,15 @@ import java.util.List;
 public class ShortTripProvinceRVAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<String> list;
+    private ProvinceRVAdapterListener listener;
+
+    public static interface ProvinceRVAdapterListener {
+        void OnItemClick(View v, String data);
+    }
+
+    public void setOnItemClickListener(ProvinceRVAdapterListener listener) {
+        this.listener = listener;
+    }
 
     public ShortTripProvinceRVAdapter(Context context, List<String> list) {
         this.context = context;
@@ -43,7 +73,15 @@ public class ShortTripProvinceRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.short_trip_province_item, parent, false));
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.short_trip_province_item, parent, false);
+        MyViewHolder vh = new MyViewHolder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.OnItemClick(v, (String) v.getTag());
+            }
+        });
+        return vh;
     }
 
     @Override

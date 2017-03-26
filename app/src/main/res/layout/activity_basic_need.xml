@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_basic_need"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tf.travelbook.BasicNeed">
+
+    <LinearLayout
+        android:id="@+id/basic_need_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/circle_linear"
+        android:divider="@drawable/line"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:id="@+id/basic_need_start_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_start_city"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/start" />
+
+            <TextView
+                android:id="@+id/basic_need_start_city_choose"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center|right"
+                android:text="@string/choose" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_need_back_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_finish_city"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+
+                android:gravity="center"
+                android:text="@string/finish" />
+
+            <TextView
+                android:id="@+id/basic_need_finish_city_choose"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center|right"
+                android:text="@string/choose" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_need_startdate_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_start_date"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/start_date" />
+
+            <TextView
+                android:id="@+id/basic_need_start_date_choose"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="30dp"
+                android:gravity="center|right"
+                android:text="@string/choose" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_need_backdate_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_back_date"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/finish_date" />
+
+            <TextView
+                android:id="@+id/basic_need_back_date_choose"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="30dp"
+                android:gravity="center|right"
+                android:text="@string/choose" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/trip_time" />
+
+            <TextView
+                android:id="@+id/basic_need_trip_time"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center|right"
+                android:text="@string/choose" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_need_peoplenum_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_people_num"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/people_num" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/basic_need_childnum_ll"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/basic_need_child_num"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/child_num" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/basic_need_linearlayout"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:text="TextView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:text="@string/next"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/basic_need_next_btn" />
+
+
+</RelativeLayout>
