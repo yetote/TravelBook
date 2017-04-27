@@ -174,11 +174,13 @@
         android:layout_marginTop="10dp"
         android:text="TextView" />
 
-    <Button
+    <utils.MaveView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/orange"
+        android:layout_height="50dp"
         android:text="@string/next"
+        app:schedule="2"
+        app:text="下一步"
+        app:waveLenght="800px"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/basic_need_next_btn" />

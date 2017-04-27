@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WaveView">
+        <attr name="waveLenght" format="dimension" />
+        <attr name="rise" format="boolean" />
+        <attr name="waveHeight" format="integer" />
+        <attr name="originY" format="integer" />
+        <attr name="duration" format="integer" />
+        <attr name="schedule" format="integer" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+</resources>

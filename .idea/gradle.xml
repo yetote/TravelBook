@@ -11,8 +11,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/london-eye-layout-manager" />
-            <option value="$PROJECT_DIR$/richtext" />
-            <option value="$PROJECT_DIR$/sample_usage" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

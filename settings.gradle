@@ -1,1 +1,1 @@
-include ':app', ':richtext', ':london-eye-layout-manager', ':sample_usage'
+include ':app', ':london-eye-layout-manager'

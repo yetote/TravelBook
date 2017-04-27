@@ -5,8 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/TravelBook.iml" filepath="$PROJECT_DIR$/TravelBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/london-eye-layout-manager/london-eye-layout-manager.iml" filepath="$PROJECT_DIR$/london-eye-layout-manager/london-eye-layout-manager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/richtext/richtext.iml" filepath="$PROJECT_DIR$/richtext/richtext.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample_usage/sample_usage.iml" filepath="$PROJECT_DIR$/sample_usage/sample_usage.iml" />
     </modules>
   </component>
 </project>

@@ -23,7 +23,6 @@ public class MyDecoration extends RecyclerView.ItemDecoration{
     public static final int[] ATRRS  = new int[]{
             android.R.attr.listDivider
     };
-
     public MyDecoration(Context context, int orientation) {
         this.mContext = context;
         final TypedArray ta = context.obtainStyledAttributes(ATRRS);

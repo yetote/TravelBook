@@ -1,11 +1,5 @@
 package model;
 
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.widget.ImageView;
-
-import com.example.tf.travelbook.MainActivity;
-
 /**
  * Created by TF on 2017/1/15.
  */
