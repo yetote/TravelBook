@@ -107,7 +107,7 @@ public class MainActivityRVAdapter extends RecyclerView.Adapter {
         vh.getContnet().setText(list.get(position).getJd_city());
         vh.getTitle().setText(list.get(position).getJd_name());
         Glide.with(context).load(list.get(position).getJd_img()).into(vh.getIv());
-        System.out.println(list.get(position).getJd_content());
+//        System.out.println(list.get(position).getJd_content());
     }
 
 

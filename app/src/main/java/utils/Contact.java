@@ -21,5 +21,6 @@ public class Contact implements Serializable {
 
     public int getmType() {
         return mType;
+
     }
 }

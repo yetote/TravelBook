@@ -9,4 +9,19 @@
         <attr name="schedule" format="integer" />
         <attr name="text" format="string" />
     </declare-styleable>
+    <declare-styleable name="DiscrollView_LayoutParams">
+        <attr name="discrollve_alpha" format="boolean"></attr>
+        <attr name="discrollve_scaleX" format="boolean"></attr>
+        <attr name="discrollve_scaleY" format="boolean"></attr>
+        <attr name="discrollve_fromBgColor" format="color"></attr>
+        <attr name="discrollve_toBgColor" format="color"></attr>
+        <attr name="discrollve_translation"></attr>
+    </declare-styleable>
+    <attr name="discrollve_translation">
+        <flag name="fromTop" value="0x01"></flag>
+        <flag name="fromBottom" value="0x02"></flag>
+        <flag name="fromLeft" value="0x04"></flag>
+        <flag name="fromRight" value="0x08"></flag>
+    </attr>
+
 </resources>

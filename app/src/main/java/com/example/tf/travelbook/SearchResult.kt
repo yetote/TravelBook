@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import android.os.Bundle
@@ -40,18 +20,20 @@ import kotlinx.android.synthetic.main.activity_search_result.*
 import java.util.ArrayList
 
 import adapter.SearchResultRVAdapter
+import android.view.WindowManager
 import model.SearchResultRVModle
 
 class SearchResult : AppCompatActivity() {
-//    private var searchView: SearchView? = null
+    //    private var searchView: SearchView? = null
     private var poiSearch: PoiSearch? = null
-//    private var rv: RecyclerView? = null
+    //    private var rv: RecyclerView? = null
     private var adapter: SearchResultRVAdapter? = null
     private var list: MutableList<SearchResultRVModle>? = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_result)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         poiSearch = PoiSearch.newInstance()
         searchresult_recycleview.layoutManager = LinearLayoutManager(this)
         list = ArrayList<SearchResultRVModle>()
@@ -67,7 +49,9 @@ class SearchResult : AppCompatActivity() {
                         val poiadress = poiResult.allPoi[i].address
                         list!!.add(SearchResultRVModle(poiname, poiadress))
                         // adapter.notifyDataSetChanged();
+                        Log.e("asxcfvgj", ": " + list);
                     }
+                    adapter!!.notifyDataSetChanged()
                 }
             }
 
@@ -82,19 +66,18 @@ class SearchResult : AppCompatActivity() {
         searchresult_searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 poiSearch!!.searchInCity(PoiCitySearchOption().city(searchresult_searchview.query.toString()).keyword("景点").pageNum(20))
-               // Log.e("city", searchresult_searchview.query.toString())
-                searchresult_searchview.clearFocus()//隐藏键盘
+                // Log.e("city", searchresult_searchview.query.toString())
+                searchresult_searchview.clearFocus()
                 return true
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
                 if (TextUtils.isEmpty(newText)) {
-                    //清楚ListView的过滤
+
                     searchresult_recycleview.removeAllViews()
                     list!!.clear()
                 } else {
-                    //使用用户输入的内容对ListView的列表项进行过滤
-                    //                    rv.setFilterText(newText);
+
                 }
                 return true
             }

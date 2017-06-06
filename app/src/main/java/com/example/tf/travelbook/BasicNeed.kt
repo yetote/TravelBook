@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import android.app.Activity
@@ -30,24 +10,15 @@ import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_basic_need.*
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
+//
 class BasicNeed : AppCompatActivity(), View.OnClickListener {
-    //    private var start_city: LinearLayout? = null
-//    private var back_city: LinearLayout? = null
-//    private var start_date: LinearLayout? = null
-//    private var back_date: LinearLayout? = null
-//    private var date_tv: TextView? = null
-//    private var startcity_tv: TextView? = null
-//    private var backcity_tv: TextView? = null
-//    private var startdate_tv: TextView? = null
-//    private var backdate_tv: TextView? = null
-//    private var next: Button? = null
-//    private val TAG = "BasicNeed"
     private val handler = object : Handler() {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
@@ -58,6 +29,7 @@ class BasicNeed : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         setContentView(R.layout.activity_basic_need)
         click()
         basic_need_next_btn.startAnimation()
@@ -102,18 +74,18 @@ class BasicNeed : AppCompatActivity(), View.OnClickListener {
                 startActivityForResult(i, 2)
             }
             R.id.basic_need_startdate_ll -> {
-                //使用Calendar类获取时间
+
                 val calendar = Calendar.getInstance()
-                //使用时间选择器
+
                 val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                    //设置startdate_tv的文字，month是0-11，所以要+1
+
                     val date = String.format("%d-%d-%d", year, month + 1, dayOfMonth)
                     basic_need_start_date_choose.text = date
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
                 val dp = datePickerDialog.datePicker
                 val d = Date()
                 val time = d.time
-                //设置时间选择器的最小时间
+
                 dp.minDate = time
                 //Log.e(TAG, "onClick: " + calendar.getTime() + "    " + time);
                 datePickerDialog.show()
@@ -122,9 +94,9 @@ class BasicNeed : AppCompatActivity(), View.OnClickListener {
                 val start_date = basic_need_start_date_choose.text.toString()
                 val sdf = SimpleDateFormat("yyyy-MM-dd")
                 try {
-                    //将String类型的日期转换为date型
+
                     val date = sdf.parse(start_date)
-                    //将转换的date型转换为long型
+
                     val t = date.time
                     Log.e("[$javaClass]", "onClick: " + date.date)
                     //                    long tdateMax = (t - (29 * 1000 * 24 * 60 * 60));
@@ -133,9 +105,8 @@ class BasicNeed : AppCompatActivity(), View.OnClickListener {
                     //                    Log.e(TAG, "onClick: " + tdateMax + "t" + dateMax.getYear() + "年" + dateMax.getMonth() + "月" + +dateMax.getDay());
                     //Log.e(TAG, "onClick: t" + t + "   " + date);
 
-                    //别问我为什么这么设置时间，我也不知道，反正就很<。)#)))≦（鱼）
                     val ca = Calendar.getInstance()
-                    //在Java中，Data函数有问题，他的getYear方法是从1900年开始算起，getMonth是0-11而非1-12月
+
                     ca.set(Calendar.YEAR, date.year + 1900)
                     ca.set(Calendar.MONTH, date.month + 1)
                     ca.set(Calendar.DAY_OF_MONTH, date.date - 1)
@@ -144,10 +115,10 @@ class BasicNeed : AppCompatActivity(), View.OnClickListener {
                     //                    Date maxTime = ca.getTime();
                     //                    TextView tv = new TextView(this);
                     //                    tv.setVisibility(View.GONE);
-                    val maxTime = String.format("%d-%d-%d", ca.get(Calendar.YEAR), ca.get(Calendar.MONTH), ca.get(Calendar.DAY_OF_MONTH))
+                    val maxTime= String.format("%d-%d-%d", ca.get(Calendar.YEAR), ca.get(Calendar.MONTH), ca.get(Calendar.DAY_OF_MONTH))
                     Log.e("[$javaClass]", "onClick: maxtime" + ca.get(Calendar.DATE))
                     val maxdate = sdf.parse(maxTime)
-                    //将转换的date型转换为long型
+
                     val timeMax = maxdate.time
                     //long timeMax = maxTime.getTime();
                     Log.e("[$javaClass]", "onClick: " + maxdate)

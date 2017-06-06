@@ -24,9 +24,12 @@ package adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
 import com.bumptech.glide.Glide
 import com.example.tf.travelbook.R
 import kotlinx.android.synthetic.main.plan_view_item.view.*
@@ -59,7 +62,6 @@ class PlanAdapter(private val context: Context, private val list: MutableList<Pl
         Glide.with(context).load(list[position].img).into(vh.itemView.plan_view_item_iv)
     }
 
-
     private var listener: setOnPlanAdapterClickListener? = null
 
     interface setOnPlanAdapterClickListener {
@@ -69,6 +71,7 @@ class PlanAdapter(private val context: Context, private val list: MutableList<Pl
     fun OnItemClickListener(listener: setOnPlanAdapterClickListener) {
         this.listener = listener
     }
+
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dodgerblue"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/mine_img"
+        android:padding="10dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/header" />
+
+    <TextView
+        android:id="@+id/mine_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/mine_img"
+        android:paddingLeft="10dp"
+        android:text="？？？"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/mine_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/mine_img"
+        android:layout_below="@+id/mine_name"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/mine_img"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="用户很懒，没有填写简介"
+        android:textColor="@color/white" />
+</RelativeLayout>

@@ -13,58 +13,64 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/checkplan_next_btn">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/checkplan_toolsbar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:background="?attr/colorPrimary"
+                android:fitsSystemWindows="true"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="行程表"
+                app:titleTextColor="@color/white" />
 
             <TextView
                 android:id="@+id/checkplan_tripplan_tv"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
-                android:text="TextView"
+                android:paddingLeft="10dp"
+                android:text="行程详情"
+                android:textColor="@color/black"
                 app:layout_constraintLeft_toLeftOf="@+id/checkplan_toolsbar"
                 app:layout_constraintRight_toRightOf="@+id/checkplan_toolsbar"
                 app:layout_constraintTop_toBottomOf="@+id/checkplan_toolsbar" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/checkplan_tripplan_rv"
-                android:layout_width="352dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
                 app:layout_constraintLeft_toLeftOf="@+id/checkplan_tripplan_tv"
                 app:layout_constraintRight_toRightOf="@+id/checkplan_tripplan_tv"
-                app:layout_constraintTop_toBottomOf="@+id/checkplan_tripplan_tv"></android.support.v7.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/checkplan_tripplan_tv" />
 
             <TextView
                 android:id="@+id/checkplan_planin_tv"
-                android:layout_width="352dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
-                android:text="TextView"
+                android:paddingLeft="10dp"
+                android:text="行程安排"
+                android:textColor="@color/black"
                 app:layout_constraintLeft_toLeftOf="@+id/checkplan_tripplan_rv"
                 app:layout_constraintRight_toRightOf="@+id/checkplan_tripplan_rv"
                 app:layout_constraintTop_toBottomOf="@+id/checkplan_tripplan_rv" />
 
             <RelativeLayout
                 android:id="@+id/checkplan_plandate_rl"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
@@ -79,7 +85,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/app_icon" />
+                    android:src="@mipmap/data" />
 
                 <TextView
                     android:id="@+id/checkplan_plandate_tv"
@@ -96,7 +102,7 @@
 
             <RelativeLayout
                 android:id="@+id/checkplan_planpeople_rl"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
@@ -112,7 +118,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/app_icon" />
+                    android:src="@mipmap/plane" />
 
                 <TextView
                     android:id="@+id/checkplan_planpeople_tv"
@@ -125,7 +131,7 @@
                     android:gravity="center"
                     android:text="-至-" />
             </RelativeLayout>
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 
     <Button

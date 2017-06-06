@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tf.travelbook.AboutActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/about_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:title="关于我们"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/about_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/about_toolbar"
+        android:layout_margin="5dp"
+        android:text="本应用仅限于学习与娱乐，乃本人学习之作。如使用过程中出现问题，请联系本人" />
+
+    <View
+        android:id="@+id/about_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/about_tv"
+        android:background="@color/grey" />
+
+    <TextView
+        android:id="@+id/about_qq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/about_tv"
+        android:layout_margin="5dp"
+        android:text="QQ:503779938" />
+    <View
+        android:id="@+id/about_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/about_qq"
+        android:background="@color/grey" />
+    <TextView
+        android:id="@+id/about_make"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/about_qq"
+        android:layout_margin="5dp"
+        android:text="开发者:董美绮" />
+
+</RelativeLayout>

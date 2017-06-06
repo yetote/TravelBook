@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import adapter.ShortTripProvinceRVAdapter
@@ -31,6 +11,7 @@ import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
 import com.alibaba.fastjson.JSON
@@ -65,6 +46,7 @@ class LongTripView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         setContentView(R.layout.activity_long_trip_view)
         province()
         city()

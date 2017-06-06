@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import adapter.PlanAdapterTwo
@@ -34,7 +14,14 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_plan.*
 import java.util.*
 
-class Plan : Activity(), view_return, View.OnClickListener, ViewTabFragment.list_size {
+class Plan : Activity(),PlanViewFragment.view_return, View.OnClickListener, ViewTabFragment.list_size {
+    override fun viewreturn(view: String?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        city_tab!!.text = view
+        //getFragmentManager().beginTransaction().replace(R.id.plan_fragment, new NearFragment()).commit();
+        view_tab!!.select()
+    }
+
     private var city_tab: ActionBar.Tab? = null
     private var view_tab: ActionBar.Tab? = null
     private var all_tab: ActionBar.Tab? = null
@@ -75,12 +62,7 @@ class Plan : Activity(), view_return, View.OnClickListener, ViewTabFragment.list
 
     }
 
-    override fun viewreturn(view: String) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        city_tab!!.text = view
-        //getFragmentManager().beginTransaction().replace(R.id.plan_fragment, new NearFragment()).commit();
-        view_tab!!.select()
-    }
+
 
     override fun list_size(list: MutableList<String>) {
         size = list.size

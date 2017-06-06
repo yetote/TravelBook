@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import android.content.Intent
@@ -27,6 +7,7 @@ import android.os.Handler
 import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -71,15 +52,18 @@ class ViewInformation : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         setContentView(R.layout.activity_view_information)
         val i = intent
-        city= i.getStringExtra("city")
+        city = i.getStringExtra("city")
+        view_information_toolbar.title=city
         list = ArrayList()
         http()
     }
 
     private fun http() {
         url = "http://123.206.60.236/travelbook/view_in_sc.php?name=" + city
+
         HttpUtils.HttpUtilsConnection(url, object : HttpUtils.HttpCallBackListener {
             override fun onFinish(request: String) {
                 val msg = Message()

@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import adapter.CheckPlanAdapter
@@ -31,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_check_plan.*
@@ -45,6 +26,7 @@ class CheckPlan : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_plan)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         planinrv()
         next()
     }
@@ -53,6 +35,15 @@ class CheckPlan : AppCompatActivity(), View.OnClickListener {
     internal fun planinrv() {
         val i = intent
         list = i.getStringArrayListExtra("plan_list")
+
+        var bundle: Bundle = i.getBundleExtra("bundle")
+        var startCity: String? = bundle.getString("start_city")
+        var backCity: String? = bundle.getString("back_city")
+        var startData: String? = bundle.getString("start_date")
+        var backData: String? = bundle.getString("back_date")
+
+        checkplan_plandate_tv.text = startData + " -至- " + backData
+        checkplan_planpeople_tv.text = startCity + " -至- " + backCity
         checkplan_tripplan_rv.layoutManager = LinearLayoutManager(this)
         checkplan_tripplan_rv.adapter = CheckPlanAdapter(this, list)
     }
@@ -71,32 +62,35 @@ class CheckPlan : AppCompatActivity(), View.OnClickListener {
         var jdList: MutableList<String>? = mutableListOf()
         jdList!!.addAll(list!!.map { it })
 
-        ad.setPositiveButton("确定", DialogInterface.OnClickListener { dialog, which ->
-            var name = et.text.toString()
-            var user = "admin"
-            var url = "http://123.206.60.236/travelbook/plan_insert.php?name=" + name + "&user=" + user
-            for (i in 0 until list!!.size) {
-                var jd = "&jd" + (i + 1) + "=" + list!!.get(i)
-                url += jd
-            }
-            Log.e(TAG, ": " + url)
-            HttpUtils.HttpUtilsConnection(url, object : HttpUtils.HttpCallBackListener {
-                override fun onFinish(request: String?) {
-//                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    var msg: Message = Message()
-                    msg.what = 1
-                    msg.obj = request
-                    handler.sendMessage(msg)
-
+        ad.setPositiveButton("确定", { _, _ ->
+            if (et.text.isEmpty()) {
+                Toast.makeText(this, "行程名不能为空", Toast.LENGTH_SHORT).show()
+            } else {
+                var name = et.text.toString()
+                var user = MyAppliation.TEL
+                var url = "http://123.206.60.236/travelbook/plan_insert.php?name=" + name + "&user=" + user
+                for (i in 0 until list!!.size) {
+                    var jd = "&jd" + (i + 1) + "=" + list!!.get(i)
+                    url += jd
                 }
 
-                override fun onError(e: Exception?) {
+                Log.e(TAG, ": " + url)
+                HttpUtils.HttpUtilsConnection(url, object : HttpUtils.HttpCallBackListener {
+                    override fun onFinish(request: String?) {
 //                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
+                        var msg: Message = Message()
+                        msg.what = 1
+                        msg.obj = request
+                        handler.sendMessage(msg)
 
+                    }
+
+                    override fun onError(e: Exception?) {
+//                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    }
+
+                })
             }
-
-            )
         })
         ad.show()
 

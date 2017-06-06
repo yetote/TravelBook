@@ -48,10 +48,6 @@ import model.Type;
 import utils.HttpUtils;
 import utils.SectionDecoration;
 
-/**
- * Created by TF on 2017/1/14.
- */
-
 public class NearFragment extends Fragment {
     private RecyclerView recyclerView;
     private MainActivityRVAdapter adapter;
@@ -69,29 +65,25 @@ public class NearFragment extends Fragment {
             for (MainActivityRVModel model : modellist) {
                 list.add(new MainActivityRVModel(model.getJd_name(), model.getJd_id(), model.getJd_content(), model.getJd_img(), model.getJd_price(), model.getJd_city(), model.getJd_adress(), model.getJd_rating(), model.getJd_type()));
             }
-
             setPullAction(list);
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
             recyclerView.addItemDecoration(new SectionDecoration(typelist, getActivity(), new SectionDecoration.DecorationCallback() {
 
-                //返回标记id (即每一项对应的标志性的字符串)
+
                 @Override
                 public String getGroupId(int position) {
                     Log.e("TAG", typelist.get(position).getType() + "112");
                     if (typelist.get(position).getType() != null) {
-
                         return typelist.get(position).getType();
                     }
                     return "-1";
                 }
 
-                // 获取同组中的第一个内容
                 @Override
                 public String getGroupFirstLine(int position) {
                     if (typelist.get(position).getType() != null) {
                         Log.e("TAG", "getGroupId: 12131231131233652");
                         return typelist.get(position).getType();
-
                     }
                     return "";
                 }
@@ -103,15 +95,13 @@ public class NearFragment extends Fragment {
                 @Override
                 public void onItemClick(View v, String data) {
                     Intent i = new Intent();
-                    i.setClass(getActivity(), NearView.class);
+                    i.setClass(getActivity(), ViewInformation.class);
                     TextView tv = (TextView) v.findViewById(R.id.mainactivity_recycleview_item_title);
-                    i.putExtra("title", tv.getText());
+                    i.putExtra("city", tv.getText());
                     startActivity(i);
                 }
             });
             recyclerView.setAdapter(adapter);
-
-
         }
 
     };
@@ -124,7 +114,6 @@ public class NearFragment extends Fragment {
             //Log.e("typelist", typelist.get(i).getType());
             nameBean.setType(name0);
             typelist.add(nameBean);
-
         }
     }
 
@@ -163,8 +152,6 @@ public class NearFragment extends Fragment {
 
             }
         });
-
-
         return v;
     }
 }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tf.travelbook.PersionCenter">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/persion_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:titleTextColor="@color/white"
+        app:title="个人中心"
+         />
+
+    <TextView
+        android:id="@+id/persion_tel"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/persion_toolbar"
+        android:gravity="center|left"
+        android:padding="10dp"
+        android:text="手机号" />
+
+    <TextView
+        android:id="@+id/persion_tel_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:layout_below="@id/persion_toolbar"
+        android:layout_toRightOf="@id/persion_tel" />
+    <View
+        android:id="@+id/persion_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/persion_tel"
+        android:background="@color/grey" />
+    <TextView
+        android:id="@+id/persion_nickname"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/persion_tel"
+        android:gravity="center|left"
+        android:padding="10dp"
+        android:text="昵称" />
+
+    <TextView
+        android:id="@+id/persion_nickname_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:layout_below="@id/persion_tel_tv"
+        android:layout_toRightOf="@id/persion_nickname" />
+    <View
+        android:id="@+id/persion_line2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/persion_nickname"
+        android:background="@color/grey" />
+    <TextView
+        android:id="@+id/persion_changepwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/persion_nickname"
+        android:gravity="center|left"
+        android:padding="10dp"
+        android:text="修改密码" />
+    <View
+        android:id="@+id/persion_line3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/persion_changepwd"
+        android:background="@color/grey" />
+    <TextView
+        android:id="@+id/persion_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/persion_changepwd"
+        android:gravity="center|left"
+        android:padding="10dp"
+        android:text="个人简介" />
+
+    <TextView
+        android:id="@+id/persion_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:layout_below="@id/persion_changepwd"
+        android:layout_toRightOf="@id/persion_content" />
+
+
+</RelativeLayout>

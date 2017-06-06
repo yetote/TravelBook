@@ -60,10 +60,6 @@ import java.util.List;
 import utils.MyLocationListener;
 
 
-/**
- * Created by TF on 2017/1/14.
- */
-
 public class MapFragment extends Fragment {
     private Button button;
     private TextureMapView mapView;
@@ -135,7 +131,7 @@ public class MapFragment extends Fragment {
 
             @Override
             public void onGetPoiResult(PoiResult poiResult) {
-                //获得检索结果
+
                 String name = poiResult.getAllPoi().get(0).name;
                 String adress = poiResult.getAllPoi().get(0).address;
                 String uid = poiResult.getAllPoi().get(0).uid;
@@ -144,7 +140,7 @@ public class MapFragment extends Fragment {
 
             @Override
             public void onGetPoiDetailResult(PoiDetailResult poiDetailResult) {
-                //获得Place检索页详情
+
             }
 
             @Override
@@ -156,10 +152,9 @@ public class MapFragment extends Fragment {
         mPoiSerch.searchInCity(new PoiCitySearchOption().city("大连").keyword("美食").pageNum(10));
         mPoiSerch.destroy();
 
-        //定位
 
-        mLocationClient = new LocationClient(getActivity().getApplicationContext());     //声明LocationClient类
-        mLocationClient.registerLocationListener(myListener);    //注册监听函数
+        mLocationClient = new LocationClient(getActivity().getApplicationContext());
+        mLocationClient.registerLocationListener(myListener);
         initLocation();
         mLocationClient.start();
         baidumap = mapView.getMap();

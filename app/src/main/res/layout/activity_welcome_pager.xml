@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<utils.discrollview.Discrollview xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tf.travelbook.WelcomePagerActivity">
+
+    <utils.discrollview.DiscrollViewContent
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/a"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:padding="25dp"
+            android:text="来一场说走就走的旅行"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            tools:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#007788"
+            app:discrollve_alpha="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/view1"
+            app:discrollve_alpha="true"
+            app:discrollve_translation="fromLeft|fromBottom" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:discrollve_fromBgColor="#ffff00"
+            app:discrollve_toBgColor="#88EE66" />
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="110dp"
+            android:layout_gravity="right"
+            android:src="@drawable/camera"
+            app:discrollve_translation="fromRight" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/b"
+            android:text="感受自然的魅力"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:discrollve_alpha="true"
+            app:discrollve_translation="fromBottom" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:src="@drawable/sweet"
+            app:discrollve_scaleX="true"
+            app:discrollve_scaleY="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:src="@drawable/camera"
+            app:discrollve_translation="fromLeft|fromBottom" />
+
+        <Button
+            android:id="@+id/welcome_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="点击开启精彩之旅"
+            android:textColor="@color/white"
+            app:discrollve_alpha="true" />
+    </utils.discrollview.DiscrollViewContent>
+</utils.discrollview.Discrollview>

@@ -21,9 +21,7 @@
 //                      佛祖保佑       永无BUG
 package model;
 
-/**
- * Created by TF on 2017/2/18.
- */
+
 
 public class CityModel {
     String city;

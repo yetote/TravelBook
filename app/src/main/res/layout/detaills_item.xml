@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/detaills_item_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/detaills_item_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/detaills_item_iv"
+        android:paddingLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/detaills_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/detaills_item_iv"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:id="@+id/detaills_item_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/detaills_item_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/detaills_item_iv" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detaills_item_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/grey" />
+</RelativeLayout>

@@ -29,7 +29,6 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
     private static final String TAG = "SectionDecoration";
 
     private List<Type> dataList;
-
     private DecorationCallback callback;
     private TextPaint textPaint;
     private Paint paint;

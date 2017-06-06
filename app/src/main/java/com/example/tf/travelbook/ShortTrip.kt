@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+//不用
 package com.example.tf.travelbook
 
 import android.content.Intent
@@ -120,7 +100,7 @@ class ShortTrip : AppCompatActivity() {
 
     }
 
-    //省份RecyclerView的实现
+
     private fun province() {
         province_list = ArrayList<String>()
 
@@ -139,7 +119,6 @@ class ShortTrip : AppCompatActivity() {
         short_trip_province_rv.adapter = province_adapter
     }
 
-    //省份下的景点的RecyclerView的实现
     private fun view() {
         view_list = ArrayList<String>()
         HttpUtils.HttpUtilsConnection(url, object : HttpUtils.HttpCallBackListener {
@@ -166,7 +145,7 @@ class ShortTrip : AppCompatActivity() {
 
     }
 
-    //计划的recyclerview的实现
+
 
 
     private fun type(list: List<MainActivityRVModel>) {

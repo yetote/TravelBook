@@ -5,4 +5,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="eight">25dp</dimen>
     <dimen name="nine">4dp</dimen>
+    <dimen name="fab_size_normal">80dp</dimen>
 </resources>

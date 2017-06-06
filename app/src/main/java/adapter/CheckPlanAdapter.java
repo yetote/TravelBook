@@ -83,7 +83,7 @@ public class CheckPlanAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder vh = (MyViewHolder) holder;
-        vh.getNum().setText("第" + position + "站");
+        vh.getNum().setText("第" + (position+1) + "站");
         vh.getView().setText(list.get(position));
     }
 

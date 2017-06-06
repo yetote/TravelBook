@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tf.travelbook.SettingActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/setting_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:title="设置"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/setting_clear"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/setting_toolbar"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:gravity="center|left"
+        android:text="清理缓存" />
+
+    <Button
+        android:id="@+id/setting_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/setting_clear"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary"
+        android:text="退出登录"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>

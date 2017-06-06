@@ -35,14 +35,14 @@
                 android:background="@drawable/wenhao" />
 
 
-            <android.support.v7.widget.RecyclerView
+            <utils.ScrollRemoveRecyclerView.MyRv
                 android:id="@+id/trip_fragment_shorttrip_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/trip_fragment_shorttrip_tv">
 
-            </android.support.v7.widget.RecyclerView>
+            </utils.ScrollRemoveRecyclerView.MyRv>
 
             <Button
                 android:id="@+id/trip_fragment_longtrip_insert"

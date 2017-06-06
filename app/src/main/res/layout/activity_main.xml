@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,6 +9,13 @@
     android:orientation="vertical"
     tools:context="com.example.tf.travelbook.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:title="地图" />
 
     <fragment
         android:id="@+id/mainactivity_fragment"
@@ -15,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/mainactivity_menu"
-        android:layout_alignParentTop="true">
+        android:layout_below="@+id/toolbar">
 
     </fragment>
 
@@ -60,5 +68,16 @@
             android:layout_weight="1"
             android:text="@string/mine" />
     </RadioGroup>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@mipmap/views" />
 
 </RelativeLayout>

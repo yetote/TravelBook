@@ -7,7 +7,7 @@
         android:id="@+id/searchresult_recycleview_item_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/app_icon"></ImageView>
+        android:src="@drawable/view"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,16 +25,6 @@
             android:layout_weight="1"
             android:gravity="left|center" />
 
-        <RatingBar
-            android:id="@+id/searchresult_recycleview_item_evaluate"
-            style="@style/Base.Widget.AppCompat.RatingBar.Small"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="left|center"
-            android:isIndicator="true"
-            android:numStars="5" />
-
         <TextView
             android:id="@+id/searchresult_recycleview_item_adress"
             android:layout_width="match_parent"
@@ -42,14 +32,5 @@
             android:layout_weight="1"
             android:gravity="left|center" />
 
-        <TextView
-            android:id="@+id/searchresult_recycleview_item_price"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:gravity="right|center"
-            android:text="@string/price"
-            android:textColor="@color/orange"
-            android:textSize="25sp" />
     </LinearLayout>
 </RelativeLayout>

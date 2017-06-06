@@ -1,24 +1,4 @@
-//
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                           O\  =  /O
-//                        ____/`---'\____
-//                      .'  \\|     |//  `.
-//                     /  \\|||  :  |||//  \
-//                    /  _||||| -:- |||||-  \
-//                    |   | \\\  -  /// |   |
-//                    | \_|  ''\---/''  |   |
-//                    \  .-\__  `-`  ___/-. /
-//                  ___`. .'  /--.--\  `. . __
-//               ."" '<  `.___\_<|>_/___.'  >'"".
-//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//              \  \ `-.   \_ __\ /__ _/   .-` /  /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                      佛祖保佑       永无BUG
+
 package com.example.tf.travelbook
 
 import adapter.TripPlanRVAdapter
@@ -27,6 +7,7 @@ import android.os.Handler
 import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import com.alibaba.fastjson.JSON
@@ -54,7 +35,7 @@ class TripPlan : AppCompatActivity() {
     private var iv: ImageView? = null
     internal var view_img: String? = null
     internal var url: String? = null
-    private var view_city:String?=null
+    private var view_city: String? = null
     private var TAG = "[$javaClass]"
     private val handler = object : Handler() {
         override fun handleMessage(msg: Message) {
@@ -82,27 +63,27 @@ class TripPlan : AppCompatActivity() {
                 view_img_list = JSON.parseArray(msg.obj.toString(), ViewImgModel::class.java)
                 view_img = view_img_list.map { it.jd_img }.get(0)
                 Glide.with(this@TripPlan).load(view_img).into(iv!!)
-                view_city= view_img_list.map { it.jd_city }.get(0)
-                Log.e(TAG, ": "+view_city )
-                var weatherUrl="http://wthrcdn.etouch.cn/weather_mini?city=" + view_city;
-                HttpUtils.HttpUtilsConnection(weatherUrl,object:HttpUtils.HttpCallBackListener{
-                    override fun onFinish(request: String?) {
-//                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                            var m:Message= Message()
-                        m.what=3
-                        m.obj=request
-                        handleMessage(m)
-                    }
-
-                    override fun onError(e: java.lang.Exception?) {
-//                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                })
+                view_city = view_img_list.map { it.jd_city }.get(0)
+                Log.e(TAG, ": " + view_city)
+//                var weatherUrl = "http://wthrcdn.etouch.cn/weather_mini?city=" + view_city;
+//                HttpUtils.HttpUtilsConnection(weatherUrl, object : HttpUtils.HttpCallBackListener {
+//                    override fun onFinish(request: String?) {
+////                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//                        var m: Message = Message()
+//                        m.what = 3
+//                        m.obj = request
+//                        handleMessage(m)
+//                    }
+//
+//                    override fun onError(e: java.lang.Exception?) {
+////                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//                    }
+//
+//                })
             }
-            if (msg.what==3){
-                var r:Root=JSON.parseObject(msg.obj.toString(),Root::class.java)
-                weatherin.addAll(r.data.forecast)
+            if (msg.what == 3) {
+//                var r: Root = JSON.parseObject(msg.obj.toString(), Root::class.java)
+//                weatherin.addAll(r.data.forecast)
 //                Log.e(TAG, ": "+weatherin )
 
             }
@@ -113,6 +94,7 @@ class TripPlan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trip_plan)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         val i = intent
         val plan_name = i.getStringExtra("plan_name")
 
@@ -161,7 +143,7 @@ class TripPlan : AppCompatActivity() {
             val tv = v.findViewById(R.id.simple_rv_item_tv) as TextView
             val view_name = tv.text.toString()
             val url2 = "http://123.206.60.236/travelbook/view_url.php?name=" + view_name
-
+            Log.e(TAG, ": "+url2 );
             HttpUtils.HttpUtilsConnection(url2, object : HttpUtils.HttpCallBackListener {
                 override fun onFinish(request: String) {
                     val msg = Message()

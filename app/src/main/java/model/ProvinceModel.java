@@ -35,8 +35,11 @@ public class ProvinceModel {
     public void setProvince(String province) {
         this.province = province;
     }
-    ProvinceModel(String province){
-        this.province=province;
+
+    ProvinceModel(String province) {
+        this.province = province;
     }
-    ProvinceModel(){}
+
+    ProvinceModel() {
+    }
 }

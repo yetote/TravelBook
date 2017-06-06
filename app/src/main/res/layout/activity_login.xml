@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_root"
+    android:background="@drawable/five"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tf.travelbook.LoginActivity">
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/login_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/login_cardView"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/add"
+        android:textAlignment="gravity"
+        android:transitionName="fab"
+        app:elevation="7dp"
+        app:fabSize="normal"
+        app:srcCompat="@mipmap/add" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/login_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/floatingActionButton6"
+                android:layout_alignStart="@+id/cardView"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="登陆"
+                android:textColor="@color/gold"
+                android:textSize="25sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="11"
+                app:hintAnimationEnabled="true">
+
+                <EditText
+                    android:id="@+id/login_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入用户名" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:hintAnimationEnabled="true"
+                app:passwordToggleDrawable="@mipmap/invisible"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn"
+                android:text="登陆"
+                android:id="@+id/login_sure"
+                android:textColor="@color/tianyi"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/login_forget"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:text=""
+                android:textColor="@color/black_50"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

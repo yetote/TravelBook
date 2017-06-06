@@ -48,9 +48,6 @@ import model.ViewTabModel;
 import utils.HttpUtils;
 import utils.SpacesItemDecoration;
 
-/**
- * Created by TF on 2017/2/24.
- */
 
 public class ViewTabFragment extends Fragment {
     private String TAG = "ViewTabFragment";
@@ -84,7 +81,7 @@ public class ViewTabFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        list_size = (ViewTabFragment.list_size) context;
+//        list_size = (ViewTabFragment.list_size) context;
     }
 
     @Nullable
@@ -96,6 +93,7 @@ public class ViewTabFragment extends Fragment {
         plan_rv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         list = new ArrayList<>();
         plan_list = new ArrayList<>();
+        list_size= (ViewTabFragment.list_size) getActivity();
         Bundle bundle = getArguments();
         String city = bundle.getString("city");
         if (city.equals("全国")) {
